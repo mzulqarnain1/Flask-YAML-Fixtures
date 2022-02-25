@@ -1,5 +1,5 @@
 Flask-YAML-Fixtures
-==============
+===================
 A fork of (Flask-Fixtures by Christopher Roach)[https://github.com/croach/FLask-Fixtures] that works with latest version of PyYAML.
 
 A simple library that allows you to add database fixtures for your unit
@@ -278,7 +278,7 @@ and set of unit tests matching the ones in the example above in the
 the directions below for "Contributing to FLask-YAML-Fixtures".
 
 Contributing to FLask-YAML-Fixtures
-------------------------------
+-----------------------------------
 
 Currently, FLask-YAML-Fixtures supports python versions 3.8+ and the
 py.test, nose, and unittest (included in the python standard library)

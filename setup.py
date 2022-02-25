@@ -30,7 +30,7 @@ except ImportError:
 
 setup(
     name="Flask-YAML-Fixtures",
-    version="0.4.0",
+    version="0.5.0",
     url="https://github.com/mzulqarnain1/Flask-Fixtures",
     license="MIT License",
     author="Muhammad Zulqarnain",
@@ -39,6 +39,7 @@ setup(
     maintainer_email="zulqarnain.mailbox@gmail.com",
     description="A simple library for adding database fixtures for unit tests using nothing but JSON or YAML.",
     long_description=README,
+    long_description_content_type="text/x-rst",
     install_requires=install_requires,
     packages=["flask_fixtures"],
     zip_safe=False,
