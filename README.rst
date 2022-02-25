@@ -1,5 +1,6 @@
-Flask-Fixtures
+Flask-YAML-Fixtures
 ==============
+A fork of (Flask-Fixtures by Christopher Roach)[https://github.com/croach/FLask-Fixtures] that works with latest version of PyYAML.
 
 A simple library that allows you to add database fixtures for your unit
 tests using nothing but JSON or YAML.
@@ -7,12 +8,12 @@ tests using nothing but JSON or YAML.
 Installation
 ------------
 
-Installing Flask-Fixtures is simple, just do a typical pip install like
+Installing FLask-YAML-Fixtures is simple, just do a typical pip install like
 so:
 
 ::
 
-    pip install flask-fixtures
+    pip install flask-yaml-fixtures
 
     If you are going to use JSON as your data serialization format, you
     should also consider installing the dateutil package since it will
@@ -24,16 +25,16 @@ install command.
 
 ::
 
-    git clone https://github.com/croach/Flask-Fixtures.git
+    git clone https://github.com/mzulqarnain1/Flask-YAML-Fixtures.git
     cd /path/to/flask-fixtures
     python setup.py install
 
 Setup
 -----
 
-To setup the library, you simply need to tell Flask-Fixtures where it
+To setup the library, you simply need to tell FLask-YAML-Fixtures where it
 can find the fixtures files for your tests. Fixtures can reside anywhere
-on the file system, but by default, Flask-Fixtures looks for these files
+on the file system, but by default, FLask-YAML-Fixtures looks for these files
 in a directory called ``fixtures`` in your app's root directory. To add
 more directories to the list to be searched, just add an attribute
 called ``FIXTURES_DIRS`` to your app's config object. This attribute
@@ -208,7 +209,7 @@ fixtures.
 Usage
 -----
 
-To use Flask-Fixtures in your unit tests, you'll need to make sure your
+To use FLask-YAML-Fixtures in your unit tests, you'll need to make sure your
 test class inherits from ``FixturesMixin`` and that you've specified a
 list of fixtures files to load. The sample code below shows how to do
 each these steps.
@@ -216,13 +217,13 @@ each these steps.
 First, make sure the app that you're testing is initialized with the proper
 configuration. Then import and initialize the ``FixturesMixin`` class, create
 a new test class, and inherit from ``FixturesMixin``. Now you just need to
-tell Flask-Fixtures which fixtures files to use for your tests. You can do so
+tell FLask-YAML-Fixtures which fixtures files to use for your tests. You can do so
 by setting the ``fixtures`` class variable. Doing so will setup and tear down
 fixtures between each test. To persist fixtures across tests, i.e., to setup
 fixtures only when the class is first created and tear them down after all
 tests have finished executing, you'll need to set the ``persist_fixtures``
 variable to True. The ``fixtures`` variable should be set to a list of
-strings, each of which is the name of a fixtures file to load. Flask-Fixtures
+strings, each of which is the name of a fixtures file to load. FLask-YAML-Fixtures
 will then search the default fixtures directory followed by each directory in
 the ``FIXTURES_DIRS`` config variable, in order, for a file matching each name
 in the list and load each into the test database.
@@ -274,14 +275,14 @@ Examples
 To see the library in action, you can find a simple Flask application
 and set of unit tests matching the ones in the example above in the
 ``tests/myapp`` directory. To run these examples yourself, just follow
-the directions below for "Contributing to Flask-Fixtures".
+the directions below for "Contributing to FLask-YAML-Fixtures".
 
-Contributing to Flask-Fixtures
+Contributing to FLask-YAML-Fixtures
 ------------------------------
 
-Currently, Flask-Fixtures supports python versions 2.6 and 2.7 and the
+Currently, FLask-YAML-Fixtures supports python versions 3.8+ and the
 py.test, nose, and unittest (included in the python standard library)
-libraries. To contribute bug fixes and features to Flask-Fixtures,
+libraries. To contribute bug fixes and features to FLask-YAML-Fixtures,
 you'll need to make sure that any code you contribute does not break any
 of the existing unit tests in any of these environments.
 

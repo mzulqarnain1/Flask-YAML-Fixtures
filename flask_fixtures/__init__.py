@@ -18,7 +18,6 @@ from sqlalchemy import Table
 
 from . import loaders
 from .utils import can_persist_fixtures
-import six
 import importlib
 
 from flask import current_app
@@ -252,7 +251,7 @@ class MetaFixturesMixin(type):
             return default_fn
 
 
-class FixturesMixin(six.with_metaclass(MetaFixturesMixin, object)):
+class FixturesMixin(metaclass=MetaFixturesMixin):
 
     fixtures = None
     app = None

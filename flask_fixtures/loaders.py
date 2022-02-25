@@ -14,7 +14,6 @@ import os
 import logging
 
 from .utils import print_info
-import six
 
 try:
     from dateutil.parser import parse as dtparse
@@ -45,7 +44,7 @@ except ImportError:
 log = logging.getLogger(__name__)
 
 
-class FixtureLoader(six.with_metaclass(abc.ABCMeta, object)):
+class FixtureLoader(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def load(self):
         pass
@@ -74,7 +73,7 @@ class YAMLLoader(FixtureLoader):
 
     def load(self, filename):
         with open(filename) as fin:
-            return yaml.load(fin)
+            return yaml.safe_load(fin)
 
 
 def load(filename):
