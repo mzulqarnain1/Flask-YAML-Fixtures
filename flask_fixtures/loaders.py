@@ -73,7 +73,7 @@ class YAMLLoader(FixtureLoader):
 
     def load(self, filename):
         with open(filename) as fin:
-            return yaml.safe_load(fin)
+            return yaml.load(fin, Loader=yaml.Loader)
 
 
 def load(filename):
